@@ -1,0 +1,59 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Label?>
+<VBox
+        prefWidth="320"
+        fx:id="vBoxRoot"
+        fx:controller="sample.Controller"
+        xmlns:fx="http://javafx.com/fxml">
+
+    <Button
+            onAction="#promptLoadFiles"
+            prefWidth="320"
+            fx:id="btnPickFile"
+            text="PickFile"/>
+    <Button
+            onAction="#promptOutputDir"
+            prefWidth="320"
+            fx:id="btnPickOutput"
+            text="Chose OutputDir"/>
+
+
+    <TableView
+            prefHeight="500"
+            prefWidth="320"
+            fx:id="tableView">
+    </TableView>
+    <HBox>
+        <Button
+                prefHeight="60"
+                prefWidth="100"
+                onAction="#processBackgroundSequential"
+                text="Sequential"/>
+        <Button
+                prefHeight="60"
+                prefWidth="100"
+                onAction="#processBackgroundCommonPool"
+                text="CommonPool"/>
+        <VBox>
+            <Button
+                    prefHeight="40"
+                    prefWidth="100"
+                    onAction="#processBackgroundFixedPool"
+                    text="FixedPool"/>
+            <Slider
+                    fx:id="poolSlider"
+                prefHeight="20"
+                prefWidth="100"
+            />
+            
+        </VBox>
+    </HBox>
+
+</VBox>
